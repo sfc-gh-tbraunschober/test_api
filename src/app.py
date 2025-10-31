@@ -9,7 +9,6 @@ logging.basicConfig(level=logging.INFO)
 
 app = Flask(__name__)
 app.register_blueprint(connector, url_prefix='/connector')
-app.register_blueprint(snowpark, url_prefix='/snowpark')
 
 @app.route("/")
 def default():
