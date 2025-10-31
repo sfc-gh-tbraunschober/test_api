@@ -51,7 +51,7 @@ def customers_top10():
         SELECT
             mykey, myvalue
         FROM apidb.apis.tab
-        mykey DESC
+        ORDER BY mykey DESC
         LIMIT 10
     '''
     sql = sql_string.format(sdt=sdt, edt=edt)
