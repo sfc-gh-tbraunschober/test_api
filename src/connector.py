@@ -49,7 +49,7 @@ def customers_top10():
         abort(400, "Invalid start and/or end dates.")
     sql_string = '''
         SELECT
-            mykey, myvalue
+            mykey, myval
         FROM apidb.apis.tab
         ORDER BY mykey DESC
         LIMIT 10
@@ -72,10 +72,10 @@ def clerk_montly_sales(clerkid, year):
 
     sql_string = '''
         SELECT
-            mykey, myvalue, myarea
+            mykey, myval, myarea
         FROM apidb.apis.tab
         WHERE mykey = {mykey}
-          AND myarea = '{myarea}'
+          AND myarea = {myarea}
         ORDER BY myarea, mykey
     '''
     sql = sql_string.format(mykey=int(mykey), myarea=int(myarea))
