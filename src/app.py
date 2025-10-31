@@ -3,7 +3,6 @@ import logging
 
 from flask import Flask, jsonify, make_response, send_file
 from connector import connector
-from snowpark import snowpark
 
 logging.basicConfig(level=logging.INFO)
 
