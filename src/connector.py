@@ -54,7 +54,7 @@ def customers_top10():
         ORDER BY mykey DESC
         LIMIT 10
     '''
-    sql = sql_string.format(sdt=sdt, edt=edt)
+    sql = sql_string
     try:
         res = conn.cursor(DictCursor).execute(sql)
         return make_response(jsonify(res.fetchall()))
@@ -63,7 +63,7 @@ def customers_top10():
 
 ## Monthly sales for a clerk in a year
 @connector.route('/area/<myarea>/key/<mykey>')
-def clerk_montly_sales(clerkid, year):
+def clerk_montly_sales(myarea, mykey):
     # Validate arguments
     if not myarea.isdigit():
         abort(400, "Area can only contain numbers.")
